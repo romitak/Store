@@ -1,0 +1,54 @@
+# Created on 2020-02-06T15:16:57.314
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+
+# Created on 2020-02-06T15:16:57.316
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+# Created on 2020-02-06T15:16:57.316
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+
+# Created on 2020-02-06T15:16:57.317
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+# Created on 2020-02-06T15:16:57.317
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+
+# Created on 2020-02-06T15:16:57.318
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+
+# Created on 2020-02-06T15:16:57.319
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+# Created on 2020-02-06T15:16:57.319
+Caused by: java.lang.RuntimeException: Class java/lang/UnknownError could not be instrumented.
+
+# Created on 2020-02-06T15:16:57.320
+	at org.jacoco.agent.rt.internal_c13123e.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:140)
+
+# Created on 2020-02-06T15:16:57.320
+	at org.jacoco.agent.rt.internal_c13123e.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:101)
+
+# Created on 2020-02-06T15:16:57.321
+	at org.jacoco.agent.rt.internal_c13123e.PreMain.createRuntime(PreMain.java:55)
+
+# Created on 2020-02-06T15:16:57.321
+	at org.jacoco.agent.rt.internal_c13123e.PreMain.premain(PreMain.java:47)
+
+# Created on 2020-02-06T15:16:57.322
+	... 6 more
+
+# Created on 2020-02-06T15:16:57.323
+Caused by: java.lang.NoSuchFieldException: $jacocoAccess
+
+# Created on 2020-02-06T15:16:57.323
+	at java.base/java.lang.Class.getField(Class.java:2000)
+
+# Created on 2020-02-06T15:16:57.324
+	at org.jacoco.agent.rt.internal_c13123e.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:138)
+
+# Created on 2020-02-06T15:16:57.324
+	... 9 more
+
+# Created on 2020-02-06T15:16:57.325
+*** java.lang.instrument ASSERTION FAILED ***: "result" with message agent load/premain call failed at JPLISAgent.c line: 422
+

@@ -1,0 +1,19 @@
+package javaJunitTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestingjavaJUnitTest {
+
+	@Test
+	void test() {
+		//fail("Not yet implemented");
+		TestJunit ju = new TestJunit();
+		int output = ju.Add(2, 3);
+		assertEquals(7,output);
+	}
+
+
+
+}
