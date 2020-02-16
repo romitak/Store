@@ -1579,3 +1579,7 @@ org.eclipse.core.runtime.CoreException: Launch configuration TestingjavaJUnitTes
 2020-02-06 20:46:32,228 [Worker-32: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2020-02-06 20:46:32,230 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2020-02-06 20:46:32,231 [Worker-32: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-02-06 20:46:32,232 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 20:47:40,750 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2020-02-06 20:47:58,519 [Worker-29: Launching javaMavenJunit (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\DELL\eclipse-workspace\javaMavenJunit
+2020-02-06 20:47:58,519 [Worker-29: Launching javaMavenJunit (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
