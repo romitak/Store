@@ -1,0 +1,3 @@
+module tradeStore {
+	exports snippet;
+}
