@@ -1,3 +1,8 @@
+/**
+ * The {@code Trade} class represents a trade entity in the Trade Store application.
+ * It is annotated with {@code @Entity} to indicate that instances of this class should be treated as JPA entities,
+ * and with {@code @Table} to specify the table name in the database as "trade".
+ */
 package com.trade.store.dto;
 
 import javax.persistence.Entity;
@@ -7,6 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+/**
+ * The {@code Trade} class defines the structure of a trade, including its attributes and methods.
+ * Each trade is uniquely identified by an auto-generated ID, and other trade details such as trade ID, version,
+ * counterparty ID, book ID, maturity date, created date, and an expiration flag.
+ */
 @Entity
 @Table(name = "trade") // Define the table name in the database
 public class Trade {

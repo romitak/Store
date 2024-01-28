@@ -1,3 +1,7 @@
+/**
+ * The {@code TradeServiceTest} class contains JUnit tests for the {@code TradeServiceImpl} class.
+ * It uses Mockito for mocking dependencies and SpringBootTest to configure the application context.
+ */
 package com.test.trade.store;
 
 import static org.junit.Assert.assertThrows;
@@ -33,7 +37,9 @@ public class TradeServiceTest {
 
     @InjectMocks
     private TradeServiceImpl tradeService;
-
+    /**
+     * Tests the processing of a new trade by verifying that the save method is called.
+     */
     @Test
     public void testProcessTrade_NewTrade() {
         Trade incomingTrade = createSampleTrade();
@@ -43,7 +49,9 @@ public class TradeServiceTest {
         // Verify that saveTrade method is called
         verify(tradeRepository, times(1)).save(incomingTrade);
     }
-
+    /**
+     * Tests the processing of an existing trade by verifying that the updateTrade method is called.
+     */
     @Test
     public void testProcessTrade_ExistingTrade() {
         Trade incomingTrade = createSampleTrade();
@@ -57,7 +65,9 @@ public class TradeServiceTest {
         // Verify that updateTrade method is called
         verify(tradeService, times(1)).updateTrade(existingTrade, incomingTrade);
     }
-
+    /**
+     * Tests the validation of a trade with a lower version.
+     */
     @Test
     public void testValidateTrade_LowerVersion() {
         Trade incomingTrade = createSampleTrade();
@@ -69,7 +79,9 @@ public class TradeServiceTest {
         // Ensure that the validation throws IllegalArgumentException for lower version
         assertThrows(IllegalArgumentException.class, () -> tradeService.validateTrade(incomingTrade));
     }
-
+    /**
+     * Tests the validation of an expired trade.
+     */
     @Test
     public void testValidateTrade_Expired() {
         Trade incomingTrade = createSampleTrade();
@@ -78,7 +90,11 @@ public class TradeServiceTest {
         // Ensure that the validation throws IllegalArgumentException for expired trade
         assertThrows(IllegalArgumentException.class, () -> tradeService.validateTrade(incomingTrade));
     }
-
+    /**
+     * Creates and returns a sample trade for testing purposes.
+     *
+     * @return A sample trade with predefined values.
+     */
     private Trade createSampleTrade() {
         Trade trade = new Trade();
         trade.setTradeId("T1");
@@ -91,3 +107,5 @@ public class TradeServiceTest {
         return trade;
     }
 }
+
+
