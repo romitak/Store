@@ -43,9 +43,9 @@ public class TradeServiceTest {
     @Test
     public void testProcessTrade_NewTrade() {
         Trade incomingTrade = createSampleTrade();
-        tradeService.processTrade(incomingTrade);
-        when(tradeRepository.findByTradeIdAndVersion("T1",1)).thenReturn(null);
 
+        when(tradeRepository.findByTradeIdAndVersion("T1",1)).thenReturn(incomingTrade);
+        tradeService.processTrade(incomingTrade);
         // Verify that saveTrade method is called
         verify(tradeRepository, times(1)).save(incomingTrade);
     }
@@ -54,16 +54,16 @@ public class TradeServiceTest {
      */
     @Test
     public void testProcessTrade_ExistingTrade() {
-        Trade incomingTrade = createSampleTrade();
         Trade existingTrade = createSampleTrade();
-        existingTrade.setVersion(1);
+        Trade incomingTrade = createSampleTrade();
+        incomingTrade.setVersion(2);
 
         when(tradeRepository.findByTradeIdAndVersion("T1", 1)).thenReturn(existingTrade);
 
-        tradeService.processTrade(incomingTrade);
+        tradeService.processTrade(existingTrade);
 
         // Verify that updateTrade method is called
-        verify(tradeService, times(1)).updateTrade(existingTrade, incomingTrade);
+        verify(tradeService, times(1)).updateTrade( existingTrade,incomingTrade);
     }
     /**
      * Tests the validation of a trade with a lower version.
